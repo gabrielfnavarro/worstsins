@@ -1,6 +1,9 @@
 from flask import Flask, render_template
 app = Flask(__name__, static_folder='static', static_url_path='/static')
 import requests
+import os
+
+token = os.getenv('TOKEN')
 def get_user_info(user_id, token):
     headers = {
         'Authorization': f'Bot {token}'
@@ -20,7 +23,6 @@ def get_user_info(user_id, token):
 
 
 user_id = '981642842457927701'
-token = 'MTEyNDA5NTE5MTE3MTc0NzkyMA.G5wf_U.0GFn4Jxb9nT2G7WzvlGFGh-jPzqO9k-coGvrb0'
 avatar = get_user_info(user_id, token)
 @app.route('/')
 def hello_world():
