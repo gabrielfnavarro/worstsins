@@ -79,10 +79,10 @@
 </head>
 
 <body>
-    <h1>Ainda falta :(</h1>
+    <h1>Todo dia vai aparecer uma parte do texto.</h1>
 
     <div id="countdown"></div>
-    <h1>Para eu te ver...</h1>
+    <h1 id='message'>Para eu te ver...</h1>
     <script>
         const targetDate = new Date('December 26, 2023 00:00:00 GMT-0400');
 
@@ -100,27 +100,27 @@
             if (difference <= 0) {
                 message = 'Chegou o dia da gente se ver...';
             } else if (days === 6) {
-                message = 'Faltam 6 dias, o tempo está passando lento, já sinto sua falta';
+                message = 'Bom, pra falar a real Sophia, nem sei por aonde começar, nunca fui bom com textos, ou demonstrar por esse tipo de texto, mas vamos tentar, acho que não custa nada...';
             } else if (days === 5) {
-                message = 'Estamos a apenas 5 dias de nos encontrarmos e ainda está tão distante, meu deus, que falta sinto de você';
+                message = 'Bom, pra falar a real Sophia, nem sei por aonde começar, nunca fui bom com textos, ou demonstrar por esse tipo de texto, mas vamos tentar, acho que não custa nada. Relaxa, não vai ser nada demais, as vezes tenho medo de acabar te assustando ou coisa do tipo, diversas vezes já me falaram que eu assusto as pessoas com minha intensidade...';
             } else if (days === 4) {
-                message = 'A contagem regressiva continua, só mais 4 dias para sentir o seu abraço';
+                message = 'Bom, pra falar a real Sophia, nem sei por aonde começar, nunca fui bom com textos, ou demonstrar por esse tipo de texto, mas vamos tentar, acho que não custa nada. Relaxa, não vai ser nada demais, as vezes tenho medo de acabar te assutando ou coisa do tipo, diversas vezes já me falaram que eu assusto as pessoas com minha intensidade. Diversas vezes, já fui chamado de bateria emocional ou bateria de ego, bom, mas esse texto não é sobre mim e sim sobre você, no dia 18/12 te contei sobre o que aconteceu na festa que eu chorei e bla bla e sim eu tenho medo de ter perder...';
             } else if (days === 3) {
-                message = 'Estamos quase lá, 3 dias restantes para eu sentir o seu cheiroo';
+                message = 'Estamos quase lá, 3 dias restantes!';
             } else if (days === 2) {
                 message = 'A ansiedade está aumentando, falta só 2 dias!';
             } else if (days === 1) {
-                message = 'Amanhã é o grande dia, mal posso esperar para finalmente pegar na sua mão';
+                message = 'Amanhã é o grande dia, mal posso esperar!';
             } else {
-                message = `${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
+                message2 = `${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
             }
 
-            document.getElementById('countdown').innerHTML = message;
+            document.getElementById('message').innerHTML = 'Bom, pra falar a real Sophia, nem sei por aonde começar, nunca fui bom com textos, ou demonstrar por esse tipo de texto, mas vamos tentar, acho que não custa nada. Relaxa, não vai ser nada demais, as vezes tenho medo de acabar te assustando ou coisa do tipo, diversas vezes já me falaram que eu assusto as pessoas com minha intensidade';
+            document.getElementById('countdown').innerHTML = `${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
         }
 
         setInterval(updateCountdown, 1000);
         updateCountdown();
     </script>
 </body>
-
 </html>
