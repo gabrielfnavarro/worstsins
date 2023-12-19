@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem Regressiva</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            opacity: 0; /* Inicia com opacidade zero para a animação de fade-in */
+            animation: fadeIn 1.5s ease-out forwards; /* Animação de fade-in */
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1, #countdown {
+            opacity: 0; /* Inicia com opacidade zero para a animação de fade-in */
+            animation: fadeInText 2s ease-out forwards, moveUp 2s ease-out forwards; /* Animação de fade-in e movimento */
+        }
+
+        @keyframes fadeInText {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes moveUp {
+            to {
+                transform: translateY(-20px);
+            }
+        }
+
+        p {
+            color: #555;
+            margin-top: 10px;
+            opacity: 0; /* Inicia com opacidade zero para a animação de fade-in */
+            animation: fadeInText 2s ease-out forwards, moveUp 2s ease-out forwards; /* Animação de fade-in e movimento */
+        }
+
+        #countdown {
+            font-size: 2em;
+            font-weight: bold;
+            color: #e44d26;
+            margin-top: 20px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            h1 {
+                font-size: 1.2em;
+            }
+
+            p {
+                font-size: 0.8em;
+            }
+
+            #countdown {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ainda falta :(</h1>
+
+    <div id="countdown"></div>
+    <h1>Para eu te ver...</h1>
+    <script>
+        const targetDate = new Date('December 26, 2023 00:00:00 GMT-0500');
+
+        function updateCountdown() {
+            const currentDate = new Date();
+            const difference = targetDate - currentDate;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            let message = '';
+
+            if (difference <= 0) {
+                message = 'Chegou o dia da gente se ver...';
+            } else if (days === 6) {
+                message = 'Faltam 6 dias, o tempo está passando rápido!';
+            } else if (days === 5) {
+                message = 'Estamos a apenas 5 dias de nos encontrarmos!';
+            } else if (days === 4) {
+                message = 'A contagem regressiva continua, só mais 4 dias!';
+            } else if (days === 3) {
+                message = 'Estamos quase lá, 3 dias restantes!';
+            } else if (days === 2) {
+                message = 'A ansiedade está aumentando, falta só 2 dias!';
+            } else if (days === 1) {
+                message = 'Amanhã é o grande dia, mal posso esperar!';
+            } else {
+                message = `${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
+            }
+
+            document.getElementById('countdown').innerHTML = message;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+
+</html>
