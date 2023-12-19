@@ -33,3 +33,7 @@ def hello_world():
 @app.route('/amigos')
 def amigos():
     return render_template('amigos.html', avatar=f'https://cdn.discordapp.com/avatars/{user_id}/{avatar}.png')
+
+@app.route('/tempo')
+def soso():
+    return render_template('tempo.html')
